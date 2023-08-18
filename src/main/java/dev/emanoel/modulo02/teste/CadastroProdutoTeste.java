@@ -1,10 +1,10 @@
 package dev.emanoel.modulo02.teste;
 
+import dev.emanoel.modulo02.dao.ProdutoDAO;
 import dev.emanoel.modulo02.model.Produto;
+import dev.emanoel.modulo02.util.JPAUtil;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import java.math.BigDecimal;
 
 public class CadastroProdutoTeste {
@@ -12,17 +12,18 @@ public class CadastroProdutoTeste {
     public static void main(String[] args) {
 
      Produto produto = new Produto();
-     produto.setNome("controle");
-     produto.setDescricao("controle xbox");
-     produto.setPreco(new BigDecimal("300"));
+     produto.setNome("headset");
+     produto.setDescricao("headset preto");
+     produto.setPreco(new BigDecimal("150"));
 
-     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("loja");
+     EntityManager entityManager = JPAUtil.getEntityManager();
 
-     EntityManager entityManager = entityManagerFactory.createEntityManager();
+     ProdutoDAO produtoDAO = new ProdutoDAO(entityManager);
 
      entityManager.getTransaction().begin();
-     entityManager.persist(produto);
+     produtoDAO.cadastrar(produto);
      entityManager.getTransaction().commit();
-     entityManager.clear();
+     entityManager.close();
+
     }
 }
