@@ -15,7 +15,7 @@ public class Produto {
     private String descricao;
     private BigDecimal preco;
     private LocalDate dataCadastro = LocalDate.now();
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
     private Categoria categoria;
 
     public Long getId() {
