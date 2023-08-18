@@ -1,4 +1,4 @@
-package dev.emanoel.modulo02.model;
+package dev.emanoel.modulo03.model;
 
 import javax.persistence.*;
 

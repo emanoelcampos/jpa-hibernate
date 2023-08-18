@@ -1,7 +1,6 @@
-package dev.emanoel.modulo02.dao;
+package dev.emanoel.modulo03.dao;
 
-import dev.emanoel.modulo02.model.Categoria;
-import dev.emanoel.modulo02.model.Produto;
+import dev.emanoel.modulo03.model.Categoria;
 
 import javax.persistence.EntityManager;
 

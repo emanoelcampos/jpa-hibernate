@@ -1,5 +1,7 @@
 package dev.emanoel.modulo02.model;
 
+import dev.emanoel.modulo03.model.Categoria;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;

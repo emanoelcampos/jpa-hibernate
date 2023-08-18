@@ -1,10 +1,10 @@
-package dev.emanoel.modulo02.teste;
+package dev.emanoel.modulo03.teste;
 
-import dev.emanoel.modulo03.dao.CategoriaDAO;
 import dev.emanoel.modulo02.dao.ProdutoDAO;
-import dev.emanoel.modulo03.model.Categoria;
 import dev.emanoel.modulo02.model.Produto;
 import dev.emanoel.modulo02.util.JPAUtil;
+import dev.emanoel.modulo03.dao.CategoriaDAO;
+import dev.emanoel.modulo03.model.Categoria;
 
 import javax.persistence.EntityManager;
 import java.math.BigDecimal;
