@@ -1,6 +1,7 @@
 package dev.emanoel.modulo02.teste;
 
 import dev.emanoel.modulo02.dao.ProdutoDAO;
+import dev.emanoel.modulo02.model.Categoria;
 import dev.emanoel.modulo02.model.Produto;
 import dev.emanoel.modulo02.util.JPAUtil;
 
@@ -12,9 +13,10 @@ public class CadastroProdutoTeste {
     public static void main(String[] args) {
 
      Produto produto = new Produto();
-     produto.setNome("headset");
-     produto.setDescricao("headset preto");
-     produto.setPreco(new BigDecimal("150"));
+     produto.setNome("livro");
+     produto.setDescricao("livro sociologia");
+     produto.setPreco(new BigDecimal("50"));
+     produto.setCategoria(Categoria.LIVROS);
 
      EntityManager entityManager = JPAUtil.getEntityManager();
 
