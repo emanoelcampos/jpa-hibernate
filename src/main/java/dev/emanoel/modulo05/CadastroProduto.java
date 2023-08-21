@@ -14,9 +14,19 @@ public class CadastroProduto {
 
     public static void main(String[] args) {
         //cadastrarProduto();
+
         //buscarProdutoPorId(1L);
-        List<Produto> produtos = buscarTodosProdutos();
-        produtos.forEach(p -> System.out.println(p.getNome()));
+
+        //List<Produto> produtos = buscarTodosProdutos();
+        //produtos.forEach(p -> System.out.println(p.getNome()));
+
+        EntityManager entityManager = JPAUtil.getEntityManager();
+        ProdutoDAO produtoDAO = new ProdutoDAO(entityManager);
+        //List<Produto> ps = produtoDAO.buscarPorNome("livro");
+        //ps.forEach(p -> System.out.println(p.getNome()));
+
+        List<Produto> ps = produtoDAO.buscarPorNomeDaCategoria("LIVROS");
+        ps.forEach(p -> System.out.println(p.getNome()));
     }
 
     private static void cadastrarProduto() {
