@@ -3,6 +3,7 @@ package dev.emanoel.modulo05.dao;
 import dev.emanoel.modulo02.model.Produto;
 
 import javax.persistence.EntityManager;
+import java.math.BigDecimal;
 import java.util.List;
 
 public class ProdutoDAO {
@@ -47,5 +48,12 @@ public class ProdutoDAO {
         return this.entityManager.createQuery(jpql, Produto.class)
                 .setParameter("nome", nome)
                 .getResultList();
+    }
+
+    public BigDecimal buscarPrecoDoProdutoComNome(String nome) {
+        String jpql = "SELECT p.preco FROM Produto p WHERE p.nome = :nome";
+        return this.entityManager.createQuery(jpql, BigDecimal.class)
+                .setParameter("nome", nome)
+                .getSingleResult();
     }
 }
