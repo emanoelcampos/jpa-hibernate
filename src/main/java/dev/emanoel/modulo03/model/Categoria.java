@@ -11,6 +11,9 @@ public class Categoria {
     private Long id;
     private String nome;
 
+    public Categoria() {
+    }
+
     public Long getId() {
         return id;
     }
