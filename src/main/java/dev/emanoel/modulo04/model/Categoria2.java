@@ -4,14 +4,14 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "categorias")
-public class Categoria {
+public class Categoria2 {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
 
-    public Categoria() {
+    public Categoria2() {
     }
 
     public Long getId() {
